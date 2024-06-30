@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %} Home Page {% endblock %}
+
+{% block content %} 
+    <h3 class="text-center mt-2">
+    Yo Bro! How's it going?</h3>
+    
+    <h2  class="text-center mt-2">
+        Are you sure you want to delete
+    </h2>
+    
+    <form method="POST">
+        {% csrf_token %}
+        <button class="btn btn-danger"> Delete </button>
+
+        <a class="btn btn-success" href="{% url 'tweet_list' %}"> Cancel </a>
+    </form>
+{% endblock %}
+
